@@ -1,15 +1,15 @@
 version: 2.1
 
 jobs:
-  myfirstworkflow:
+  Build:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Build Docker"
+          command: "docker build . -t mygitea"
 workflows:
   kickoff:
     jobs:
-      - myfirstworkflow
+      - Build
