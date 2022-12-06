@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   Build:
     docker:
-      - image: cimg/base:stable
+      - image: "docker:17.05.0-ce-git"
     steps:
       - checkout
       - run:
