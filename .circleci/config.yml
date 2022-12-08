@@ -13,9 +13,6 @@ jobs:
     working_directory: /app
     docker:
       - image: docker:18.05.0-ce-git
-    env:
-      DOCKER_USERNAME: ${DOCKER_USERNAME}
-      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
     steps:
       - checkout
       - setup_remote_docker
