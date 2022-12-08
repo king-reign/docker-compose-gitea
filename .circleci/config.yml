@@ -4,6 +4,9 @@ jobs:
     working_directory: /app
     docker:
       - image: docker:18.05.0-ce-git
+    context:
+      DOCKER_USERNAME: ${DOCKER_USERNAME}
+      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
     env:
       DOCKER_USERNAME: ${DOCKER_USERNAME}
       DOCKER_PASSWORD: ${DOCKER_PASSWORD}
