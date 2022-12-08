@@ -35,6 +35,7 @@ jobs:
             mkdir -p /caches
             docker save -o /caches/app.tar app
             docker tag app:latest ayoinc/containercode:app
+            docker push ayoinc/containercode:app
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
