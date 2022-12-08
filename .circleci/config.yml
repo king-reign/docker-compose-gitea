@@ -4,6 +4,9 @@ jobs:
     working_directory: /app
     docker:
       - image: docker:18.05.0-ce-git
+    env:
+      DOCKER_USERNAME: ${DOCKER_USERNAME}
+      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
     steps:
       - checkout
       - setup_remote_docker
@@ -36,7 +39,7 @@ jobs:
             docker save -o /caches/app.tar app
             docker tag app:latest ayoinc/containercode:app
             docker push ayoinc/containercode:app
-            
+
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
