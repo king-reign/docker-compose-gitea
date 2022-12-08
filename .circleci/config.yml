@@ -1,12 +1,18 @@
 version: 2.1
+
+orbs:
+  docker: circleci/docker@1.0.0
+  
+
+context:
+  DOCKER_USERNAME: ${DOCKER_USERNAME}
+  DOCKER_PASSWORD: ${DOCKER_PASSWORD}
+
 jobs:
   build:
     working_directory: /app
     docker:
       - image: docker:18.05.0-ce-git
-    context:
-      DOCKER_USERNAME: ${DOCKER_USERNAME}
-      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
     env:
       DOCKER_USERNAME: ${DOCKER_USERNAME}
       DOCKER_PASSWORD: ${DOCKER_PASSWORD}
